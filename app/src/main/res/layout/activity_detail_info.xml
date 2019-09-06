@@ -7,283 +7,293 @@
     android:background="#ffffff"
     android:orientation="vertical"
     tools:context=".DetailInfoActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/detailTopImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="centerCrop" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/gorumgorum"
-
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/detailSubs"
+        <ImageView
+            android:id="@+id/detailTopImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="23dp"
-            android:text="고구마 농사하기 좋은 100평"
-            android:textColor="#5f5f5f"
-            android:textSize="24dp" />
+            android:scaleType="centerCrop" />
 
-        <TextView
-            android:id="@+id/detailLoc"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gorumgorum"
+
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/detailSubs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23dp"
+                android:text="고구마 농사하기 좋은 100평"
+                android:textColor="#5f5f5f"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/detailLoc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23dp"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/icon_map_3"
+                android:text="  전라남도 고흥군 고흥읍 342"
+                android:textColor="#626B80"
+                android:textSize="14dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="#D8D8D8" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="23dp"
-            android:layout_marginTop="10dp"
-            android:drawableLeft="@drawable/icon_map_3"
-            android:text="  전라남도 고흥군 고흥읍 342"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="24dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="임대구분"
+                    android:textColor="#79828B" />
+
+                <TextView
+                    android:id="@+id/rentTypeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#333333"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="주재배작물"
+                    android:textColor="#79828B" />
+
+                <TextView
+                    android:id="@+id/cropType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#333333"
+                    android:text="-"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="임대료"
+                    android:textColor="#79828B" />
+
+                <TextView
+                    android:id="@+id/landPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#02D772"
+                    android:textSize="23dp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/detailDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="20dp"
+            android:text="14dp"
+            android:textColor="#4F4F4F" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="25dp"
+            android:text="토지대장"
             android:textColor="#626B80"
             android:textSize="14dp" />
-    </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="#D8D8D8" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="24dp"
-        android:orientation="horizontal">
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/landInput01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="15dp"
+            android:text="- 지목 : "
+            android:textColor="#626B80"
+            android:textSize="14dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="임대구분"
-                android:textColor="#79828B" />
-
-            <TextView
-                android:id="@+id/rentTypeTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#333333"
-                android:textSize="17dp" />
-        </LinearLayout>
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/landInput02"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="5dp"
+            android:text="- 지목 : "
+            android:textColor="#626B80"
+            android:textSize="14dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="주재배작물"
-                android:textColor="#79828B" />
-
-            <TextView
-                android:id="@+id/cropType"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#333333"
-                android:textSize="17dp" />
-        </LinearLayout>
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/landInput03"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="5dp"
+            android:text="- 지목 : "
+            android:textColor="#626B80"
+            android:textSize="14dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="임대료"
-                android:textColor="#79828B" />
-
-            <TextView
-                android:id="@+id/landPrice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#02D772"
-                android:textSize="23dp" />
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/detailDesc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="20dp"
-        android:text="14dp"
-        android:textColor="#4F4F4F" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="25dp"
-        android:text="토지대장"
-        android:textColor="#626B80"
-        android:textSize="14dp" />
-
-    <TextView
-        android:id="@+id/landInput01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="15dp"
-        android:text="- 지목 : "
-        android:textColor="#626B80"
-        android:textSize="14dp" />
-
-    <TextView
-        android:id="@+id/landInput02"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="5dp"
-        android:text="- 지목 : "
-        android:textColor="#626B80"
-        android:textSize="14dp" />
-
-    <TextView
-        android:id="@+id/landInput03"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="5dp"
-        android:text="- 지목 : "
-        android:textColor="#626B80"
-        android:textSize="14dp" />
-
-    <TextView
-        android:id="@+id/landInput04"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="5dp"
-        android:text="- 지목 : "
-        android:textColor="#626B80"
-        android:textSize="14dp" />
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="25dp"
-        android:text="개별공시지가"
-        android:textColor="#626B80"
-        android:textSize="14dp" />
-
-    <TextView
-        android:id="@+id/priceInput01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="15dp"
-        android:text="- 지목 : "
-        android:textColor="#626B80"
-        android:textSize="14dp" />
-
-    <TextView
-        android:id="@+id/priceInput02"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="5dp"
-        android:text="- 지목 : "
-        android:textColor="#626B80"
-        android:textSize="14dp" />
-
-    <TextView
-        android:id="@+id/priceInput03"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="5dp"
-        android:text="- 지목 : "
-        android:textColor="#626B80"
-        android:textSize="14dp" />
-
-    <TextView
-        android:id="@+id/priceInput04"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="5dp"
-        android:text="- 지목 : "
-        android:textColor="#626B80"
-        android:textSize="14dp" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="15dp"
-        android:background="#D8D8D8" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="25dp"
-        android:text="임대인 정보"
-        android:textColor="#626B80"
-        android:textSize="14dp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/rentImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/landInput04"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="5dp"
+            android:text="- 지목 : "
+            android:textColor="#626B80"
+            android:textSize="14dp" />
 
-            <TextView
-                android:id="@+id/rentalName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
 
-            <TextView
-                android:id="@+id/rentalInfo"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="25dp"
+            android:text="개별공시지가"
+            android:textColor="#626B80"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/priceInput01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="15dp"
+            android:text="- 지목 : "
+            android:textColor="#626B80"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/priceInput02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="5dp"
+            android:text="- 지목 : "
+            android:textColor="#626B80"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/priceInput03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="5dp"
+            android:text="- 지목 : "
+            android:textColor="#626B80"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/priceInput04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="5dp"
+            android:text="- 지목 : "
+            android:textColor="#626B80"
+            android:textSize="14dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:background="#D8D8D8" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="25dp"
+            android:text="임대인 정보"
+            android:textColor="#626B80"
+            android:textSize="14dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal">
+
+            <ImageView
+
+                android:id="@+id/rentImage"
+                android:layout_gravity="center_vertical"
+                android:layout_width="73dp"
+                android:layout_height="73dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="24dp" />
+
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/rentalName"
+                    android:text="오윤선"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/rentalInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="임대인 /@Ohyoon" />
+            </LinearLayout>
+
         </LinearLayout>
 
-    </LinearLayout>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/req_button"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dp"
-        android:id="@+id/reqButton"/>
+        <Button
+            android:id="@+id/reqButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/req_button" />
 
     </LinearLayout>
 </ScrollView>

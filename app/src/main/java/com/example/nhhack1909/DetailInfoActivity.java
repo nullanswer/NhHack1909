@@ -40,7 +40,9 @@ public class DetailInfoActivity extends AppCompatActivity implements View.OnClic
 
     String id;
 
-    ImageView detailTopImage;
+    ImageView detailTopImage,rentImage;
+
+    SelectLendData data;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,6 +81,7 @@ public class DetailInfoActivity extends AppCompatActivity implements View.OnClic
 
         rentalName = findViewById(R.id.rentalName);
         rentalInfo = findViewById(R.id.rentalInfo);
+        rentImage = findViewById(R.id.rentImage);
 
         reqButton = findViewById(R.id.reqButton);
         reqButton.setOnClickListener(this);
@@ -95,6 +98,7 @@ public class DetailInfoActivity extends AppCompatActivity implements View.OnClic
             case R.id.reqButton:
 
                 Intent intent = new Intent(DetailInfoActivity.this, ReqActivity.class);
+                intent.putExtra("data",data);
                 startActivity(intent);
                 break;
         }
@@ -115,7 +119,7 @@ public class DetailInfoActivity extends AppCompatActivity implements View.OnClic
 //                searchDateTextView.setText(stringFormat.format(selectedDate));
                 Gson gson = new Gson();
                 SelectLendData selectLendData = gson.fromJson(s, SelectLendData.class);
-
+                data = selectLendData;
 
 
                 Glide.with(DetailInfoActivity.this).load(selectLendData.getSecond_image()).into(detailTopImage);
@@ -134,6 +138,9 @@ public class DetailInfoActivity extends AppCompatActivity implements View.OnClic
                 landInput04.setVisibility(View.GONE);
 
                 priceInput01.setText("- 개별공시지가 : " + selectLendData.getLand_official_price());
+
+                rentalName.setText(selectLendData.getUsername());
+                Glide.with(DetailInfoActivity.this).load(selectLendData.getImage()).into(rentImage);
 
 
 

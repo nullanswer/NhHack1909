@@ -27,21 +27,27 @@
 
         <ImageView
             android:id="@+id/rentImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_width="73dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="73dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/rentalName"
+                android:text="오윤선"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/rentalInfo"
+                android:text="임대인 /@Ohyoon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -52,6 +58,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
         <TextView
@@ -67,6 +74,7 @@
             android:layout_height="wrap_content"
             android:text="소재지"
             android:textColor="#626B80"
+            android:id="@+id/contarcAdd"
 
             android:textSize="14dp" />
     </LinearLayout>
@@ -80,7 +88,7 @@
             android:layout_width="45dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
-            android:text="면"
+            android:text="면적"
             android:textColor="#626B80"
             android:textSize="14dp" />
 
