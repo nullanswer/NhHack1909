@@ -5,43 +5,94 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SearchResultActivity">
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <ImageView
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:src="@drawable/searching_result_top_image"></ImageView>
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="#D8D8D8" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/searching_result_top_image"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="30dp"></ImageView>
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="18dp"
+                android:text="당신만을 위한 금융 상품 맞춤 추천"
+                android:textSize="17dp" />
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:scaleType="centerCrop"
+                android:layout_height="wrap_content"
+                android:src="@drawable/finace_product_01"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="centerCrop"
+                android:layout_height="wrap_content"
+                android:src="@drawable/finance_product_02"/>
 
         </LinearLayout>
+
+
     </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="15dp"
         android:layout_gravity="bottom"
         android:background="#ffffff"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingTop="15dp">
+
         <View
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:layout_weight="1"
+            android:layout_weight="1" />
 
-            />
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/mainTabButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:background="@drawable/icon_main_selector"
-            />
+            android:background="@drawable/icon_main_selector" />
 
         <View
             android:layout_width="0dp"
@@ -51,24 +102,26 @@
             />
 
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
             android:id="@+id/commuTabButton"
-            android:background="@drawable/icon_community_selector"
-            />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/icon_community_selector" />
+
         <View
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:layout_weight="1"
 
             />
+
         <ImageButton
+            android:id="@+id/myPageTabButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:id="@+id/myPageTabButton"
-            android:background="@drawable/icon_mypage_selector"/>
+            android:background="@drawable/icon_mypage_selector" />
+
         <View
             android:layout_width="0dp"
             android:layout_height="1dp"

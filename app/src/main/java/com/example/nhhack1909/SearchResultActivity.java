@@ -1,6 +1,8 @@
 package com.example.nhhack1909;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -12,9 +14,12 @@ import android.widget.ImageView;
 
 import com.example.nhhack1909.Common.NetworkClass;
 import com.example.nhhack1909.Common.SPController;
+import com.example.nhhack1909.Data.BestHouseData;
 import com.google.gson.Gson;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
@@ -25,6 +30,8 @@ import okhttp3.Response;
 public class SearchResultActivity extends AppCompatActivity implements View.OnClickListener{
 
     ImageView myPageTabButton,commuTabButton,mainTabButton;
+    RecyclerView recyclerView;
+    SRAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +51,11 @@ public class SearchResultActivity extends AppCompatActivity implements View.OnCl
 
         myPageTabButton = findViewById(R.id.myPageTabButton);
         myPageTabButton.setOnClickListener(this);
+
+        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(SearchResultActivity.this, LinearLayoutManager.VERTICAL, false));
+        adapter = new SRAdapter();
+        recyclerView.setAdapter(adapter);
 
         new getBestHouse().execute();
     }
@@ -99,13 +111,21 @@ public class SearchResultActivity extends AppCompatActivity implements View.OnCl
             super.onPostExecute(s);
             if (s != null) {
 
-                Log.e("sss",s);
 //                searchDateTextView.setText(stringFormat.format(selectedDate));
 //                Gson gson = new Gson();
 //                AttendanceByDateData attendanceByDateData = gson.fromJson(s, AttendanceByDateData.class);
 //                attendanceCountTextView.setText("입장 : " + attendanceByDateData.getEnterPeople() + " 명");
 //                completeCountTextView.setText("이수 : "+ attendanceByDateData.getCompletePeople() + " 명");
 //                exitCountTextView.setText("퇴장 : " + attendanceByDateData.getExitPeople() + " 명");
+                Gson gson = new Gson();
+                BestHouseData[] tempData = gson.fromJson(s,BestHouseData[].class);
+                ArrayList<BestHouseData> data = new ArrayList<>(Arrays.asList(tempData));
+
+                adapter.setData(data);
+                Log.e("tatgta",data.size()+"");
+
+
+
             }
             else {
                 Log.e("isNull","www");

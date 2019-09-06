@@ -13,15 +13,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".SearchResultActivity"
-            android:theme="@style/MainTheme">
-
-        </activity>
+        <activity android:name=".Contract1Activity"></activity>
+        <activity
+            android:name=".ReqActivity"
+            android:theme="@style/MainTheme" />
+        <activity
+            android:name=".DetailInfoActivity"
+            android:theme="@style/MainTheme" />
+        <activity
+            android:name=".SearchResultActivity"
+            android:theme="@style/MainTheme" />
         <activity
             android:name=".SearchActivity"
-            android:theme="@style/MainTheme">
-
-        </activity>
+            android:theme="@style/MainTheme" />
 
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
@@ -30,7 +34,7 @@
         <activity android:name=".MapActivity" />
         <activity
             android:name=".LoginActivity"
-            android:theme="@style/LoginTheme" >
+            android:theme="@style/LoginTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -40,7 +44,7 @@
         <activity android:name=".IntroActivity" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/MainTheme"></activity>
+            android:theme="@style/MainTheme" />
         <activity android:name=".WebViewMapActivity" />
     </application>
 
