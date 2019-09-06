@@ -7,14 +7,14 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 
-public class ReqActivity extends AppCompatActivity {
+public class CompleteContractActivity extends AppCompatActivity {
 
     Handler mHandler = new Handler() {
 
         public void handleMessage(Message msg) {
-            Intent t = new Intent(ReqActivity.this, Contract1Activity.class);
+            Intent t = new Intent(CompleteContractActivity.this, MainActivity.class);
 //            t.putExtra("gcm_value", getIntent().getSerializableExtra("gcm_value"));
-            ReqActivity.this.startActivity(t);
+            CompleteContractActivity.this.startActivity(t);
             finish();
         }
     };
@@ -22,13 +22,12 @@ public class ReqActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_req);
+        setContentView(R.layout.activity_complete_contract);
 
         goToNextStage();
     }
 
     private void goToNextStage() {
-        mHandler.sendEmptyMessageDelayed(0, 100);
+        mHandler.sendEmptyMessageDelayed(0, 5000);
     }
-
 }

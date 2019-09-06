@@ -13,7 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Contract1Activity"></activity>
+        <activity android:name=".CompleteContractActivity"></activity>
+        <activity
+            android:name=".Contract1Activity"
+            android:theme="@style/MainTheme" />
         <activity
             android:name=".ReqActivity"
             android:theme="@style/MainTheme" />
@@ -31,7 +34,9 @@
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="brzf1doney" />
 
-        <activity android:name=".MapActivity" />
+        <activity
+            android:name=".MapActivity"
+            android:theme="@style/MainTheme" />
         <activity
             android:name=".LoginActivity"
             android:theme="@style/LoginTheme">

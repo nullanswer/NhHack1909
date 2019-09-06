@@ -20,6 +20,34 @@ public class SelectLendData implements Serializable {
     String isbest;
     String land_pay_type;
 
+    String land_long_description;
+    String land_official_price;
+    String second_image;
+
+    public String getSecond_image() {
+        return second_image;
+    }
+
+    public void setSecond_image(String second_image) {
+        this.second_image = second_image;
+    }
+
+    public String getLand_official_price() {
+        return land_official_price;
+    }
+
+    public void setLand_official_price(String land_official_price) {
+        this.land_official_price = land_official_price;
+    }
+
+    public String getLand_long_description() {
+        return land_long_description;
+    }
+
+    public void setLand_long_description(String land_long_description) {
+        this.land_long_description = land_long_description;
+    }
+
     public String getId() {
         return id;
     }

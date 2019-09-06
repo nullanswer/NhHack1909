@@ -10,8 +10,10 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.nhhack1909.Common.NetworkClass;
 import com.example.nhhack1909.Common.SPController;
 import com.example.nhhack1909.Data.BestHouseData;
@@ -37,6 +39,8 @@ public class DetailInfoActivity extends AppCompatActivity implements View.OnClic
     Button reqButton;
 
     String id;
+
+    ImageView detailTopImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +52,8 @@ public class DetailInfoActivity extends AppCompatActivity implements View.OnClic
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(getResources().getColor(R.color.mainStatusColor));
+
+        detailTopImage = findViewById(R.id.detailTopImage);
 
 
 //      "id":422,"land_type":"농지임대","land_pay":810000,"land_size":"3273","land_jimk":"답","land_admin":"강진지사","land_phone":"061-430-7731","land_description":"방울방울 터지는 250평","land_lat":126.702,"land_lng":34.7356,"land_address":"전라남도 강진군 성전면 월하리 1421-7","img":"https://nhhacker.s3.ap-northeast-2.amazonaws.com/img_list_1%403x.png","isbest":1,"land_pay_type":"임대"}
@@ -103,12 +109,16 @@ public class DetailInfoActivity extends AppCompatActivity implements View.OnClic
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            if (s != null) {
 
-                Log.e("sss",s);
+            if (s != null) {
+                Log.e("wewe",s);
 //                searchDateTextView.setText(stringFormat.format(selectedDate));
                 Gson gson = new Gson();
                 SelectLendData selectLendData = gson.fromJson(s, SelectLendData.class);
+
+
+
+                Glide.with(DetailInfoActivity.this).load(selectLendData.getSecond_image()).into(detailTopImage);
 
                 detailSubs.setText(selectLendData.getLand_description());
                 detailLoc.setText(selectLendData.getLand_address());
@@ -116,19 +126,15 @@ public class DetailInfoActivity extends AppCompatActivity implements View.OnClic
                 rentTypeTextView.setText(selectLendData.getLand_type());
                 landPrice.setText(selectLendData.getLand_pay());
 
-                landInput01.setText(selectLendData.getLand_jimk());
-//                AttendanceByDateData attendanceByDateData = gson.fromJson(s, AttendanceByDateData.class);
-//                attendanceCountTextView.setText("입장 : " + attendanceByDateData.getEnterPeople() + " 명");
-//                completeCountTextView.setText("이수 : "+ attendanceByDateData.getCompletePeople() + " 명");
-//                exitCountTextView.setText("퇴장 : " + attendanceByDateData.getExitPeople() + " 명");
+                detailDesc.setText(selectLendData.getLand_long_description());
 
+                landInput01.setText("- 지목 : " + selectLendData.getLand_jimk());
+                landInput02.setText("- 면적 : " + selectLendData.getLand_size());
+                landInput03.setText("- 소유구분 : " + selectLendData.getLand_admin());
+                landInput04.setVisibility(View.GONE);
 
-//                Gson gson = new Gson();
-//                BestHouseData[] tempData = gson.fromJson(s,BestHouseData[].class);
-//                ArrayList<BestHouseData> data = new ArrayList<>(Arrays.asList(tempData));
-//
-//                adapter.setData(data);
-//                Log.e("tatgta",data.size()+"");
+                priceInput01.setText("- 개별공시지가 : " + selectLendData.getLand_official_price());
+
 
 
 
@@ -144,6 +150,7 @@ public class DetailInfoActivity extends AppCompatActivity implements View.OnClic
                     .add("id", id)
                     .build();
 
+            Log.e("id",id);
 
             String temUrl = "selectLand";
             Request request = new Request.Builder()
